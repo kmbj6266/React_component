@@ -1,0 +1,555 @@
+$iPadPro-1366x1024-width: 1366px;
+$iPadPro-1366x1024-height: 1024px;
+
+$Laptop-1280x950-width: 1280px;
+$Laptop-1280x950-height: 950px;
+
+$Laptop-1440x900-width: 1440px;
+$Laptop-1440x900-height: 900px;
+
+.manage-offer-page {
+    width: 100%;
+    overflow: hidden;
+
+    h5, p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        height: 1.5rem;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    h5 {
+        font-family: SprintSansBold, Arial, Sans-serif;
+    }
+
+    p {
+        font-family: SprintSansRegular, Arial, Sans-serif;
+        color: #333 !important;
+        margin: 0.3rem 0;
+    }
+
+    .standard-wiz-layout {
+        width: 100%;
+        padding: 6rem 8rem;
+    }
+
+    nav {
+        background-color: #FCFCFD;
+    }
+    .primaryFlatButton {
+        border-radius: 0;
+    }
+
+    /* class for highlighted Active page - to be controlled by "State" later - so selector will change here to be like className= "activePage" or something*/
+    ul li:first-child .primaryFlatButton {
+        border-bottom: 1px solid #0050bb;
+    }
+
+    .standard-wiz-layout {
+        padding: 0;
+    }
+
+    .title-bar, .offer-preview-sec {
+        display: flex;
+        justify-content: space-between;
+        vertical-align: top;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.15);
+    }
+
+    .title-bar {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 1;
+        min-height: 4.4rem;
+    }
+
+    .offer-preview-sec {
+        box-shadow: none;
+        overflow: visible;
+    }
+  
+    .offer-side, .preview-side {
+        display: flex;
+        justify-content: space-around;
+    } 
+    .offer-side {
+        display: block;
+        text-align: center;
+        width: 36%;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        display: inline-block;
+        vertical-align: top;
+        color: #333;
+    }
+
+    .temporary {
+        width: 89%;
+    }
+    .offer-preview-sec .offer-side {
+        padding: 3rem;
+        overflow-y: scroll;
+        max-height: 74rem;
+
+        @media(min-width: $iPadPro-1366x1024-width) {
+            max-height: 80rem;
+
+        }
+    }
+ 
+    .offer-preview-sec .offer-side, .offer-preview-sec .preview-side {
+        border-left: 1px solid rgba(0,0,0,0.1);
+        background:#FCFCFD;
+    }
+
+    .offer-preview-sec .preview-side {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .offer-box {
+        display:block;
+        width: 38.4rem;
+        border: 1px solid #ccc;
+        border-radius: 5px 5px 0 0 ;
+        margin: 0 auto 4rem;
+    }
+
+    .offer-box.selected-offer {
+        border: 2px solid #0066EE;
+        box-shadow: 2px 3px 13px rgba(0, 102, 238, 0.5);
+        border-radius: 6px 6px 0 0;
+    }
+
+    .status-bar-section {
+        border-bottom: 1px solid #ccc;
+        background: #fff;
+        height: 3.0rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        border-radius: 4px 4px 0 0;
+
+    }
+    .status-icon-box, .status-word, .status-location-box {
+        display: inline-block;
+        vertical-align: top;
+    }
+    h4 {
+        font-size: 1.6rem;
+        color: #333;
+    }
+    .status-icon-box {
+        order: 1;
+        width: 11%;
+        height: 100%;
+        padding: .6rem 1rem;
+        text-align: center;
+        border-radius: 4px 0 0 0;
+        border-width: 1px;
+        border-style: solid;
+    }
+    .status-pending {
+        background-color: #0066EE;
+        border-color:#0066EE;
+    }
+    .status-approved {
+        background-color: #008800;
+        border-color:#008800;
+
+    }
+    .status-notsubmitted {
+        background-color: #FFB400;
+        border-color:#FFB400;
+    }
+    .status-notapproved {
+        background-color: #E60000;
+        border-color:#E60000;
+    }
+
+    .status-icon-box i {
+        color: #fff;
+    }
+    .status-notsubmitted.status-icon-box i {
+        color: #333;
+    }
+   
+    .status-word {
+        order: 2;
+        padding-left: 1rem;
+        width: 28rem;
+        width: 73%;
+    }
+
+    .status-location-box {
+        order: 3;
+        flex-grow: 3;
+        width: 7%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: .6rem .6rem .6rem 0;
+        align-content: center;
+    }
+
+    .location-icon {
+        color: #333;
+        display: inline-block;
+        margin: 0 8px 0 0px;
+    }
+
+    .offer-section {
+        height: 10rem;
+        width: 100%;
+        background-color: #FCFCFD;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+/* this is for the Left Pane - offer boxes */
+    .offer-side-input-wrapper {
+        z-index: 1;
+        text-align: left;
+        padding: .9rem .5rem .8rem 1.3rem;
+        background: #fff;
+        width: 28.6rem;
+        height: 8rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        display: flex;
+    }
+  
+    .offer-side-input-wrapper .offer-img {
+        text-align: center;
+        background-color: #ffffff;
+        display: inline-block;
+        vertical-align: top;
+        width: 73px;
+        height: 60px;
+        border: 1px solid #eaeaea;
+        -webkit-box-shadow: 1px 2px 2px #ccc; 
+        -moz-box-shadow: 1px 2px 2px #ccc;
+        box-shadow: 1px 2px 2px #ccc; 
+    }
+
+    .offer-side-input-wrapper .helper {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .offer-side-input-wrapper .offer-img img {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .offer-side-input-wrapper .offer-input-text {
+        width: 212px;
+        height: 60px;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 8px;
+    }
+ 
+    .button-section {
+        display: block;
+        width: 100%;
+    }
+    .cancelButton {
+        width: 50%;
+        border-radius: 0px !important;
+        margin: 0;
+        border-color: #ccc;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+    }
+
+/* BOTH PREVIEWS ------------------------------------------- */
+    .preview-side {
+        width: 64%;
+     
+    }
+    .list-view-side, .detail-view-side {
+        width: 40.3rem;
+        padding: 2rem;
+    }
+
+    .list-view-img {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 35.8rem;
+        height: 70.2rem;
+        margin: 0 auto;
+    }
+
+    .list-view-content {
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+
+/* THIS IS FOR THE LIST PHONE PREVEW -----------------*/
+    .listview-offer-wrapper {
+        width: 100%;
+        background-color: transparent;
+        position: absolute;
+        top: 14rem;
+        left: 4rem;
+        z-index: 1;
+        text-align: left;
+        padding: .9rem .5rem .8rem 1.3rem;
+        width: 28.6rem;
+        height: 8rem;
+        border-radius: 4px;
+
+        .offer-img {
+            text-align: center;
+            background-color: #ffffff;
+            display: inline-block;
+            vertical-align: top;
+            width: 73px;
+            height: 60px;
+            border: 1px solid #eaeaea;
+            -webkit-box-shadow: 1px 2px 2px #ccc; 
+            -moz-box-shadow: 1px 2px 2px #ccc;
+            box-shadow: 1px 2px 2px #ccc; 
+        }
+
+        .helper {
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .offer-img img {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* List preview text inside offer */
+        .offer-input-text {
+            width: 190px;
+            height: 60px;
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 12px;
+        }
+}
+
+
+/* DETAIL PHONE PREVIEW CSS HERE -------------------------------------------------------------------------- */
+    .detail-view-content {
+        position: relative;
+    }
+
+    .detail-view-img {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 35.8rem;
+        height: 70.2rem;
+    }
+
+    .details-input-wrapper {
+        background: #fff;
+        width: 29.7rem;
+        min-height: 58.2rem;
+        z-index: 1;
+        text-align: center;
+        border-radius: 0 0 30px 30px;
+        display: inline-block;
+        vertical-align: top;
+        border: 1px solid #e8e8e8;
+        position: absolute;
+        top: 8.7rem;
+        left: 3.2rem;
+        margin-bottom: 4rem;
+    }
+
+    .brand-logo-wrapper {
+        width: 29.6rem;
+        height: 11.9rem;
+        text-align: center;
+
+        .helper {
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .offer-img {
+            text-align: center;
+            background-color: #ffffff;
+            display: inline-block;
+            vertical-align: middle;
+            width: 110px;
+            height: 80px;
+        }
+
+        .offer-img img {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+/*  DETAIL PHONE PREVIEW - INSIDE THE PREVIEW DETAILS WRAPPER */
+    .details-input-wrapper .offer-input-text {
+        width: 100%;
+        display: block;
+        vertical-align: top;
+        padding: 0rem .5rem;
+        text-align: left;
+        padding-bottom: .5rem;
+        position: relative;
+
+        .coupon-section {
+            width: 100%;
+            text-align: center;
+            margin: 1.9rem auto 0;
+
+            p.coupon-code {
+                font-size: 1.3rem;
+                line-height: 1;
+                padding: 0;
+                font-weight: 600;
+                white-space: nowrap;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+
+            }
+            .copy-coupon-btn {
+                margin: 1.1rem auto;
+                width: 14.8rem;
+                height: 2.5rem;
+                background-color: #FFCE0B;
+                padding: 0.7rem 0;
+                border-radius: 50.0rem;
+            }
+          
+            h5 {
+                line-height: 1 !important;
+            }
+        }
+
+
+        .details-text, .descrpt-text {
+            margin-top: 1rem;
+
+            h5, p, .descrpt-text, span, .RichEditor-editor {
+                font-size: 1.3rem !important;
+                line-height: 1;
+                height: auto !important;
+                white-space: normal;
+                overflow: visible !important;
+                font-family: SprintSansRegular, Arial, Sans-serif !important;
+                padding: 0;
+            }
+            h5 {
+                font-family: SprintSansBold, Arial, Sans-serif !important;
+            }
+            p {
+                height: auto !important;
+            }
+        }
+
+        .details-text {
+            p {
+                margin: 0.1rem 0 0;
+            }
+        }
+        
+        p.live-desc-text {
+            margin: 0.1rem 0 0;
+        }
+
+        .descrpt-text {
+            min-height: 12rem;
+            overflow: visible;
+        }
+       
+  
+    /* FIX THIS RICH TEXT EDITOR STUFF; */
+        .public-DraftEditor-content div h1 .public-DraftStyleDefault-block.public-DraftStyleDefault-ltr {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .public-DraftEditor-content div h1, .public-DraftEditor-content div h2 {
+            margin: 0.5rem 0;
+        }
+        .public-DraftEditor-content div ol li, .public-DraftEditor-content div ul li {
+            padding-bottom: 0.5rem;
+        }
+        .public-DraftEditor-content div h2 .public-DraftStyleDefault-block.public-DraftStyleDefault-ltr {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+     
+    }
+
+    .view-more-wrapper {
+        margin-top: 1rem;
+        font-family: SprintSansRegular, Arial, Sans-serif;
+
+        p {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 0;
+            line-height: 2.4rem !important;
+            color: #0050BB !important;
+            height: auto !important;
+
+        }
+
+        i {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 1.8rem;
+            padding-top: 0.4rem;
+            padding-left: 0.5rem;
+        }
+        .button-text-wrapper {
+            display: table;
+            text-align: center;
+            height: 2.9rem;
+            min-width: 55.5%;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        
+        .link-button {
+            display: table-cell;
+            height: 100%;
+            vertical-align: middle;
+            border-radius: 50.0rem;
+            background-color: #FFCE0B;
+            margin: 1.2rem auto 0.2rem;
+            padding: 0.8rem 1.5rem 0.6rem;
+        }
+
+        .button-text {
+            font-family: SprintSansBold, Arial, Sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+        }
+
+        p:last-child {
+            font-size: 1.05rem;
+        }
+    }
+}
